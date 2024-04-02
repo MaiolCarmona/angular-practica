@@ -3,3 +3,48 @@
     width: 100%;
   }
 }
+
+.banners{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .6rem;
+  padding: 0 .6rem;
+  margin-top: .6rem;
+  
+  img {
+    width: 100%;
+  }
+}
+
+.banners-categories{
+  display: flex;
+  flex-direction: column;
+}
+
+@media (width < 768px){
+  .banners{
+    grid-template-columns: min(80%, 20rem);
+    align-items: center;
+    justify-content: center;
+    order: 1;
+  }
+}
+
+.categories-section {
+  margin-top: 1rem;
+  h1{
+    text-align: center;
+    text-transform: none;
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin-block: 1rem;
+  }
+  .categories-cards {
+    height: 100px;
+    background-color: #09f;
+  }
+}

@@ -14,10 +14,14 @@
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 0;
 }
 
 app-footer{
   margin-top: auto;
+}
+
+li{
+  list-style: none;
 }
