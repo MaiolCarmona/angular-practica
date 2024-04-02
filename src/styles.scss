@@ -1,3 +1,23 @@
 @import "node_modules/bootswatch/dist/lux/_variables.scss";
 @import "node_modules/bootstrap/scss/bootstrap.scss";
-@import "node_modules/bootswatch/dist/lux/_bootswatch.scssq";
+@import "node_modules/bootswatch/dist/lux/_bootswatch.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+  border: solid 1px green;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 0;
+}
+
+app-footer{
+  margin-top: auto;
+}
