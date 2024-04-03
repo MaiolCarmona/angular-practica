@@ -16,10 +16,11 @@ const routes: Routes = [
   },
   {
     path: 'gallery/:category',
-    component: GalleryComponent
+    component: GalleryComponent,
+    pathMatch: 'full'
   },
   {
-    path: 'detail/:id',
+    path: 'gallery/:category/:id',
     component: DetailComponent
   },
   {

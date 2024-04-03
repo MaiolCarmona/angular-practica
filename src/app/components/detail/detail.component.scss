@@ -1,0 +1,82 @@
+@import "node_modules/bootswatch/dist/lux/_variables.scss";
+
+.product-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-inline: 3vw;
+  column-gap: 3vw;
+}
+
+.image-section {
+
+  img {
+    width: clamp(200px, 100%, 400px);
+    aspect-ratio: 2/3;
+    display: block;
+    margin: 0 auto;
+    aspect-ratio: 2/3;
+  }
+}
+
+.text-section {
+
+  .category-reviews {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    .category {
+      font-weight: bold;
+    }
+  }
+
+  h2 {
+    color: $body-color;
+  }
+
+  .out-stock-text {
+    font-size: 1em;
+  }
+
+
+  .colors {
+    margin-top: 2rem;
+
+    img {
+      width: max(80px, 20%);
+      aspect-ratio: 2/3;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+  }
+
+  .sizes {
+    margin-top: 2rem;
+    span {
+      font-weight: bold;
+    }
+    .size-buttons{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 3rem);
+      gap: .5rem;
+      .no-stock{
+        text-decoration: line-through;
+      }
+
+      button{
+        border: solid 2px transparent;
+        background-color: rgba($body-color, 0.2);
+        &:hover{
+          background-color: rgba($body-color, 0.3);
+        }
+        &.activeSize{
+          border: solid 2px black;
+        }
+      }
+    }
+  }
+
+}

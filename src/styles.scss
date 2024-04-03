@@ -11,6 +11,7 @@
 //que pasaba a mayúsculas los títulos
 h1, h2, h3, h4, h5, h6{
   text-transform: none;
+  text-wrap: balance;
 }
 
 .wrapper {
@@ -29,4 +30,8 @@ app-footer{
 
 li{
   list-style: none;
+}
+
+.chivato{
+  border: solid 1px red;
 }

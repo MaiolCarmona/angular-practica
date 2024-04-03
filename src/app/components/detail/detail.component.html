@@ -1,1 +1,40 @@
-<p>detail works!</p>
+<div class="product-wrapper" *ngIf="product">
+<section class="image-section">
+  <div class="image-wrapper">
+    <img [src]="product.image" [alt]="product.name">
+    <span class="out-stock-img" *ngIf="product.totalStock < 1">OUT OF STOCK</span>
+  </div>
+</section>
+<section class="text-section">
+ <div class="product-info">
+   <section class="category-reviews">
+     <span class="category">{{product.category | titlecase}}</span>
+     <span class="reviews">⭐⭐⭐⭐⭐ Reviews (0)</span>
+   </section>
+   <h1>{{product.name}}</h1>
+   <h2>{{product.price | currency}} <span class="out-stock-text">(Out of Stock)</span></h2>
+ </div>
+ <div class="colors-sizes">
+   <section class="colors">
+     <p class="color">Color: <span>Multicolor</span></p>
+     <img [src]="product.image" [alt]="product.name">
+   </section>
+   <section class="sizes">
+     <p class="size-text">Size: <span>Choose size</span></p>
+     <div class="size-buttons">
+       <button
+       (click)="selectedSize = size.sizeName"
+       *ngFor="let size of product.sizes"
+       class="btn btn-light btn-sm"
+       [ngClass]="{'no-stock' : size.sizeStock < 1, 'activeSize' : selectedSize === size.sizeName}"
+       [disabled]="size.sizeStock < 1"
+       >
+       {{size.sizeName}}
+       </button>
+     </div>
+   </section>
+ </div>
+
+</section>
+
+</div>

@@ -1,4 +1,4 @@
 <h1>{{categoryName | titlecase}}</h1>
 <section class="gallery">
-  <app-product-card *ngFor="let product of products" [product]="product" [routerLink]="'/detail/'+product.id"></app-product-card>
+  <app-product-card *ngFor="let product of products" [product]="product" [routerLink]="'/gallery/'+categoryName+'/'+product.id"></app-product-card>
 </section>
