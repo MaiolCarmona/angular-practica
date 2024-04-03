@@ -3,11 +3,28 @@
 .product-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "image info"
+    "image colors-sizes";
   padding-inline: 3vw;
   column-gap: 3vw;
 }
 
+@media (width < 750px) {
+  .product-wrapper {
+    grid-template-areas: 
+    "image info"
+    "colors-sizes colors-sizes";
+  }
+
+  .colors-sizes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .image-section {
+  grid-area: image;
 
   img {
     width: clamp(200px, 100%, 400px);
@@ -17,66 +34,74 @@
     aspect-ratio: 2/3;
   }
 }
+ .produict-info {
+  grid-area: info;
+}
 
-.text-section {
+.colors-sizes{
+  grid-area: colors-sizes;
+}
 
-  .category-reviews {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+.category-reviews {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 
-    .category {
-      font-weight: bold;
-    }
+  .category {
+    font-weight: bold;
+  }
+}
+
+h2 {
+  color: $body-color;
+}
+
+.out-stock-text {
+  font-size: 1em;
+}
+
+
+.colors {
+  margin-top: 2rem;
+
+  img {
+    width: max(80px, 20%);
+    aspect-ratio: 2/3;
   }
 
-  h2 {
-    color: $body-color;
+  span {
+    font-weight: bold;
   }
 
-  .out-stock-text {
-    font-size: 1em;
+}
+
+.sizes {
+  margin-top: 2rem;
+
+  span {
+    font-weight: bold;
   }
 
+  .size-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 3rem);
+    gap: .5rem;
 
-  .colors {
-    margin-top: 2rem;
-
-    img {
-      width: max(80px, 20%);
-      aspect-ratio: 2/3;
+    .no-stock {
+      text-decoration: line-through;
     }
 
-    span {
-      font-weight: bold;
-    }
+    button {
+      border: solid 2px transparent;
+      background-color: rgba($body-color, 0.2);
 
-  }
-
-  .sizes {
-    margin-top: 2rem;
-    span {
-      font-weight: bold;
-    }
-    .size-buttons{
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 3rem);
-      gap: .5rem;
-      .no-stock{
-        text-decoration: line-through;
+      &:hover {
+        background-color: rgba($body-color, 0.3);
       }
 
-      button{
-        border: solid 2px transparent;
-        background-color: rgba($body-color, 0.2);
-        &:hover{
-          background-color: rgba($body-color, 0.3);
-        }
-        &.activeSize{
-          border: solid 2px black;
-        }
+      &.activeSize {
+        border: solid 2px black;
       }
     }
   }
-
 }
