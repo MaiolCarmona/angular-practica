@@ -13,11 +13,19 @@
   <section class="categories-section">
     <h1>Shop by Category</h1>
     <ul>
-      <li><a href="">Women</a></li>
-      <li><a href="">Men</a></li>
-      <li><a href="">Kids</a></li>
+      <li (click)="selectedGender = 'women'" [ngClass]="{'activeGender': selectedGender === 'women'}">Women</li>
+      <li (click)="selectedGender = 'men'" [ngClass]="{'activeGender': selectedGender === 'men'}">Men</li>
     </ul>
-    <!-- todo -->
-    <div class="categories-cards"></div>
+    <div class="categories-cards">
+      <ng-container *ngFor="let category of categories">
+        <!-- en el routerLink pondriamos [routerLink]="'/gallery/'+category.name" pero como solo hay vestidos todas las cards redirigiran a esta categoria de momento -->
+        <div class="card" *ngIf="category.gender == selectedGender" [routerLink]="'/gallery/'+'dresses'">
+          <img class= "card-img"[src]="category.image" [alt]="category.name">
+          <div class="card-footer">
+            <h2>{{category.name | titlecase}} ({{category.itemsCount}})</h2>
+          </div>
+        </div>
+      </ng-container>
+    </div>
   </section>
 </div>

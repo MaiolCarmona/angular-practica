@@ -7,6 +7,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+// esto es un reset de los estilos que trae el tema "lux" de bootswatch
+//que pasaba a mayúsculas los títulos
+h1, h2, h3, h4, h5, h6{
+  text-transform: none;
+}
 
 .wrapper {
   border: solid 1px green;

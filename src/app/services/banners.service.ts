@@ -6,7 +6,7 @@ import { Banner } from '../common/interfaces/banner'
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class BannersService {
   private readonly baseUrl = 'http://localhost:3000/'
   private readonly panoBannersUrl = this.baseUrl + 'panoramicBanners'
   private readonly regularBannersUrl = this.baseUrl + 'regularBanners'

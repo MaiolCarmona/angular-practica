@@ -1,6 +1,8 @@
 import { Component } from '@angular/core'
 import { Banner } from 'src/app/common/interfaces/banner'
-import { HomeService } from 'src/app/services/home.service'
+import { Category } from 'src/app/common/interfaces/category'
+import { BannersService } from 'src/app/services/banners.service'
+import { ShopService } from 'src/app/services/shop.service'
 
 @Component({
   selector: 'app-home',
@@ -10,16 +12,20 @@ import { HomeService } from 'src/app/services/home.service'
 export class HomeComponent {
   panoBanners: Banner[] = []
   regularBanners: Banner[] = []
-  constructor (private readonly homeService: HomeService) {
+  categories: Category[] = []
+  selectedGender: string = 'women'
+
+  constructor (private readonly bannersService: BannersService, private readonly shopService: ShopService) {
     this.loadPanoBanners()
     this.loadRegularBanners()
+    this.loadCategories()
   }
 
-  loadPanoBanners (): void {
-    this.homeService.getPanoBanners().subscribe(
+  private loadPanoBanners (): void {
+    this.bannersService.getPanoBanners().subscribe(
       {
-        next: banners => {
-          this.panoBanners = banners
+        next: data => {
+          this.panoBanners = data
         },
         error: error => {
           console.error(error)
@@ -28,12 +34,25 @@ export class HomeComponent {
     )
   }
 
-  loadRegularBanners (): void {
-    this.homeService.getRegularBanners().subscribe(
+  private loadRegularBanners (): void {
+    this.bannersService.getRegularBanners().subscribe(
       {
-        next: bann => {
-          console.log(bann)
-          this.regularBanners = bann
+        next: data => {
+          console.log(data)
+          this.regularBanners = data
+        },
+        error: error => {
+          console.error(error)
+        }
+      }
+    )
+  }
+
+  private loadCategories (): void {
+    this.shopService.getCategories().subscribe(
+      {
+        next: data => {
+          this.categories = data
         },
         error: error => {
           console.error(error)
