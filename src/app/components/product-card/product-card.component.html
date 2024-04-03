@@ -1,0 +1,17 @@
+<article class="card" *ngIf="product">
+
+  <!-- la función click de los iconos de favorito, que desarrollaria dentro de la clase,
+  persistiria el cambio del atrobuto favorite del producto, pero como estamos trabajando con un
+  backend mockeado simplemente he querido simular aquí parte del comportamiento,
+  cuando el componente se recarga al navegar y se cargan los productos se pierde este cambio -->
+  <fa-icon [icon]="heartSolid" *ngIf="product.favorite" (click)="product.favorite = !product.favorite; $event.stopPropagation()" class="favorite-heart"></fa-icon>
+  <fa-icon [icon]="heartRegular" *ngIf="!product.favorite" (click)="product.favorite = !product.favorite; $event.stopPropagation()" class="non-favorite-heart"></fa-icon>
+  <img class="card-img-top" [src]="product.image" [alt]="product.name">
+  <div class="card-footer">
+    <h2>{{product.name}}</h2>
+    <div class="prices">
+      <span [ngClass]="{'old-price' : product.discount > 0}">{{product.price | currency}}</span>
+      <span class="new-price" *ngIf="product.discount > 0">{{product.price * (1 - product.discount) | currency}}</span>
+    </div>
+  </div>
+</article>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { HomeComponent } from './components/home/home.component'
 import { GalleryComponent } from './components/gallery/gallery.component'
+import { DetailComponent } from './components/detail/detail.component'
 
 const routes: Routes = [
   {
@@ -16,6 +17,14 @@ const routes: Routes = [
   {
     path: 'gallery/:category',
     component: GalleryComponent
+  },
+  {
+    path: 'detail/:id',
+    component: DetailComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'home'
   }
 ]
 

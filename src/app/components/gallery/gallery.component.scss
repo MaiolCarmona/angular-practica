@@ -1,0 +1,17 @@
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  margin: 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+
+
