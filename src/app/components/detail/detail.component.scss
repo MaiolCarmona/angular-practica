@@ -3,18 +3,19 @@
 .product-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
+  grid-template-areas:
     "image info"
     "image colors-sizes";
   padding-inline: 3vw;
   column-gap: 3vw;
 }
 
-@media (width < 750px) {
+
+@media (width < 650px) {
   .product-wrapper {
-    grid-template-areas: 
-    "image info"
-    "colors-sizes colors-sizes";
+    grid-template-areas:
+      "image info"
+      "colors-sizes colors-sizes";
   }
 
   .colors-sizes {
@@ -23,9 +24,25 @@
   }
 }
 
+@media (width < 450px) {
+  .product-wrapper {
+  padding-inline: 1rem;
+  grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "image"
+      "info"
+      "colors-sizes";
+  }
+ 
+}
+
+
+
+
 .image-section {
   grid-area: image;
-
+  margin: 0 auto;
   img {
     width: clamp(200px, 100%, 400px);
     aspect-ratio: 2/3;
@@ -34,11 +51,12 @@
     aspect-ratio: 2/3;
   }
 }
- .produict-info {
+
+.produict-info {
   grid-area: info;
 }
 
-.colors-sizes{
+.colors-sizes {
   grid-area: colors-sizes;
 }
 
