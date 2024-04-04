@@ -10,23 +10,37 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu">
+              <!-- todas las categorias dirigen a dresses porque solo hay eso en el backend, pero se 
+              estableceria de forma dinamica el routerlink si hubiese más -->
+              <li *ngFor="let category of categories"><a class="dropdown-item" href="#" [routerLink]="'gallery/dresses'">{{category.name | titlecase}}</a></li>
+              
+            </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" routerLink="/about">About Us</a>
           </li>
         </ul>
       </div>
       <ul class="second-ul">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <li>
+          <fa-icon [icon]="glass"></fa-icon>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+        <li>
+          <fa-icon [icon]="user"></fa-icon>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+        <li>
+          <fa-icon [icon]="cart"></fa-icon>
+        </li>
+        <li>
+          <select>
+            <option selected value="1">EN</option>
+            <option value="2">ES</option>
+          </select>
         </li>
       </ul>
      

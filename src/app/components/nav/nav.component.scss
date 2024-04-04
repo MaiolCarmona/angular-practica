@@ -1,4 +1,4 @@
-nav{
+nav {
   position: relative;
   padding-left: 1.5vw;
   background-color: white !important;
@@ -11,27 +11,35 @@ img {
   left: max(50%, 10rem);
   transform: translateX(-50%);
   top: .5rem;
-  
+
 }
 
-.second-ul{
+.second-ul {
   position: absolute;
-  display: flex;
-  align-items: center;
-  column-gap: .5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: .5rem;
   margin: 0;
-  li{
+
+  li {
     margin: 0;
     list-style-type: none;
   }
+
   right: 2vw;
   top: 2.3rem;
 }
 
-@media (width < 768px) {
-  .second-ul{
-    flex-direction: column;
+@media (width < 650px) {
+  .second-ul {
+  grid-template-columns: 1fr 1fr;
+    
     top: .7rem;
-    align-items: start;
+    
   }
+}
+
+option:hover {
+  background-color: #fff;
 }
