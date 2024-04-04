@@ -1,8 +1,11 @@
+@import "node_modules/bootswatch/dist/lux/_variables.scss";
+
 h1 {
   text-align: center;
   text-decoration: underline;
-  text-underline-offset: 0.5rem;
+  text-underline-offset: 0.2rem;
   margin: 2rem;
+  color: $body-color;
 }
 
 .gallery {

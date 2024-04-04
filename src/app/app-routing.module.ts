@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router'
 import { HomeComponent } from './components/home/home.component'
 import { GalleryComponent } from './components/gallery/gallery.component'
 import { DetailComponent } from './components/detail/detail.component'
+import { AboutComponent } from './components/about/about.component'
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'gallery/:category/:id',
     component: DetailComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
   {
     path: '**',
