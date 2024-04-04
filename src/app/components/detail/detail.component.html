@@ -12,7 +12,7 @@
      <span class="reviews">⭐⭐⭐⭐⭐ Reviews (0)</span>
    </section>
    <h1>{{product.name}}</h1>
-   <h2>{{product.price | currency}} <span class="out-stock-text">(Out of Stock)</span></h2>
+   <h2>{{product.price | currency}}  <span class="out-stock-text" *ngIf="product.totalStock < 1" >Out of Stock</span></h2>
  </div>
  <div class="colors-sizes">
    <section class="colors">
@@ -20,7 +20,7 @@
      <img [src]="product.image" [alt]="product.name">
    </section>
    <section class="sizes">
-     <p class="size-text">Size: <span>Choose size</span></p>
+     <p class="size-text">Size: <span class="choose-size">Choose size</span></p>
      <div class="size-buttons">
        <button
        (click)="selectedSize = size.sizeName"
@@ -31,9 +31,29 @@
        >
        {{size.sizeName}}
        </button>
-     </div>
+      </div>
+      <fa-icon class="ruler" [icon]="ruler"></fa-icon><a  routerLink="." class="size-chart">Size Chart</a>
+     
    </section>
- </div>
+   <br>
+  </div>
+  <section class="buy-buttons">
+   <div class="buttons">
+     <button *ngIf="product.totalStock > 0" class="btn btn-outline-dark">
+       <fa-icon [icon]="cart"></fa-icon> Add</button>
+     <button *ngIf="product.totalStock < 1" class="btn btn-outline-dark">
+       <fa-icon [icon]="envelope"></fa-icon>Wait List</button>
+     <button class="btn btn-outline-primary">
+       <fa-icon [icon]="heart"></fa-icon>Whislist</button>
+   </div>
+   <div>
+     <p>Is your size/color sold out? <a routerLink=".">Join the Wait List!</a></p>
+     <span>Share:</span>
+     <fa-icon [icon]="twitter"></fa-icon>
+     <fa-icon [icon]="facebook"></fa-icon>
+     <fa-icon [icon]="pinterest"></fa-icon>
+   </div>
+  </section>
 
 
 </div>

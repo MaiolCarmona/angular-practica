@@ -1,5 +1,8 @@
 import { Component } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
+import { faFacebook, faPinterest, faXTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faHeart } from '@fortawesome/free-regular-svg-icons'
+import { IconDefinition, faCartShopping, faRulerHorizontal } from '@fortawesome/free-solid-svg-icons'
 import { Product } from 'src/app/common/interfaces/product'
 import { ShopService } from 'src/app/services/shop.service'
 
@@ -13,6 +16,14 @@ export class DetailComponent {
   categoryName: string = ''
   product?: Product
   selectedSize: string = ''
+
+  ruler: IconDefinition = faRulerHorizontal
+  twitter: IconDefinition = faXTwitter
+  facebook: IconDefinition = faFacebook
+  pinterest: IconDefinition = faPinterest
+  heart: IconDefinition = faHeart
+  cart: IconDefinition = faCartShopping
+  envelope: IconDefinition = faEnvelope
 
   constructor (private readonly shopService: ShopService, private readonly actRoute: ActivatedRoute) {
     this.getProductId()
