@@ -4,16 +4,6 @@
   }
 }
 
-.banners{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  padding: 0 1rem;
-  
-  img {
-    width: 100%;
-  }
-}
 
 .banners-categories{
   display: flex;
@@ -21,6 +11,18 @@
   margin-top: 1rem;
   row-gap: 1rem;
 }
+
+.banners{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  
+  
+  img {
+    width: 100%;
+  }
+}
+
 
 @media (width < 768px){
   .banners{
@@ -56,18 +58,13 @@
     }
   }
   .categories-cards {
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    // justify-content: center;
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    // padding-inline: 1rem;
-
+  
     gap: 1rem;
     margin: 0;
-
-   
 
     .card {
       width: clamp(180px, 30%, 244px);

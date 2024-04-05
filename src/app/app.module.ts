@@ -10,7 +10,7 @@ import { HomeComponent } from './components/home/home.component'
 import { GalleryComponent } from './components/gallery/gallery.component'
 import { DetailComponent } from './components/detail/detail.component'
 import { HttpClientModule } from '@angular/common/http'
-import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductCardComponent } from './components/product-card/product-card.component'
 import { AboutComponent } from './components/about/about.component'
 
 @NgModule({

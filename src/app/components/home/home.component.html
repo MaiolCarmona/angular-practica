@@ -1,6 +1,6 @@
-<section class="carousel slide" data-bs-ride="carousel">
+<section class="carousel slide" data-bs-pause="false" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active" *ngFor="let banner of panoBanners">
+    <div class="carousel-item" [ngClass]="{'active': i === 0}" *ngFor="let banner of panoBanners; let i = index">
       <img [src]="banner.image"  alt="panoramic promotional banner">
     </div>
   </div>
