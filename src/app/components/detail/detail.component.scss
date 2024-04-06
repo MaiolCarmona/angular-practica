@@ -139,6 +139,7 @@
     button {
       border: solid 2px transparent;
       background-color: rgba($body-color, 0.2);
+      padding-inline: 10px;
 
       &:hover {
         background-color: rgba($body-color, 0.3);
